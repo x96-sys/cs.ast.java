@@ -11,9 +11,9 @@ import static org.x96.sys.foundation.io.TestUtils.assertPrintLn;
 
 class SegmentTest {
     @Test
-    void happy(){
-        Segment s = new Segment(new Axis[]{
-                new RangeHex(new Hexadecimal((byte) 0x1), new Hexadecimal((byte) 0x2)),
+    void happy() {
+        Segment s = new Segment(new Axis[] {
+                new RangeHex(new Hexadecimal(0x1), new Hexadecimal(0x2)),
                 new Word("cs".getBytes()),
         }, Optional.empty());
         assertEquals("segment", s.primor());
@@ -27,12 +27,12 @@ class SegmentTest {
     }
 
     @Test
-    void happyRecursive(){
-        Segment s = new Segment(new Axis[]{
-                new RangeHex(new Hexadecimal((byte) 0x1), new Hexadecimal((byte) 0x2)),
+    void happyRecursive() {
+        Segment s = new Segment(new Axis[] {
+                new RangeHex(new Hexadecimal(0x1), new Hexadecimal(0x2)),
                 new Word("cs".getBytes()),
-                new Segment(new Axis[]{
-                        new RangeHex(new Hexadecimal((byte) 0x11), new Hexadecimal((byte) 0x22)),
+                new Segment(new Axis[] {
+                        new RangeHex(new Hexadecimal(0x11), new Hexadecimal(0x22)),
                         new Word("sc".getBytes())
                 }, Optional.empty())
         }, Optional.empty());
@@ -52,12 +52,12 @@ class SegmentTest {
     }
 
     @Test
-    void happyRecursiveQuantifier(){
-        Segment s = new Segment(new Axis[]{
-                new RangeHex(new Hexadecimal((byte) 0x1), new Hexadecimal((byte) 0x2)),
+    void happyRecursiveQuantifier() {
+        Segment s = new Segment(new Axis[] {
+                new RangeHex(new Hexadecimal(0x1), new Hexadecimal(0x2)),
                 new Word("cs".getBytes()),
-                new Segment(new Axis[]{
-                        new RangeHex(new Hexadecimal((byte) 0x11), new Hexadecimal((byte) 0x22)),
+                new Segment(new Axis[] {
+                        new RangeHex(new Hexadecimal(0x11), new Hexadecimal(0x22)),
                         new Word("sc".getBytes())
                 }, Optional.empty())
         }, Optional.of(new ZeroOrMore("*".getBytes()[0])));

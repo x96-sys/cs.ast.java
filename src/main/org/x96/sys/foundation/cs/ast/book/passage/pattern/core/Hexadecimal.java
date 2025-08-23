@@ -1,6 +1,6 @@
 package org.x96.sys.foundation.cs.ast.book.passage.pattern.core;
 
-public record Hexadecimal(byte raw) implements Core {
+public record Hexadecimal(int raw) implements Core {
     @Override
     public String primor() {
         return "hex";
