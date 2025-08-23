@@ -6,7 +6,7 @@ import org.x96.sys.foundation.cs.ast.book.passage.pattern.core.unit.quantifier.Q
 
 import java.util.Optional;
 
-public record Unit(Optional<Bang> inhibitor, Glyph glyph, Optional<Quantifier> quantifier)
+public record Unit(Optional<Bang> bang, Glyph glyph, Optional<Quantifier> quantifier)
         implements Core, Axis {
     @Override
     public String primor() {
@@ -16,7 +16,7 @@ public record Unit(Optional<Bang> inhibitor, Glyph glyph, Optional<Quantifier> q
     @Override
     public void prettyPrint(String indent) {
         System.out.println(indent + primor());
-        inhibitor.ifPresent(i -> i.prettyPrint(indent + " ".repeat(4)));
+        bang.ifPresent(i -> i.prettyPrint(indent + " ".repeat(4)));
         glyph.prettyPrint(indent + " ".repeat(4));
         quantifier.ifPresent(q -> q.prettyPrint(indent + " ".repeat(4)));
     }

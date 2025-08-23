@@ -16,7 +16,7 @@ class UnitTest {
     void happy() {
         Unit unit = new Unit(Optional.empty(), new Glyph("cs".getBytes()), Optional.empty());
         assertEquals("unit", unit.primor());
-        assertFalse(unit.inhibitor().isPresent());
+        assertFalse(unit.bang().isPresent());
         assertFalse(unit.quantifier().isPresent());
         assertPrintLn("""
                 unit
@@ -28,7 +28,7 @@ class UnitTest {
         Bang i = new Bang((byte) '!');
         Unit unit = new Unit(Optional.of(i), new Glyph("cs".getBytes()), Optional.empty());
         assertEquals("unit", unit.primor());
-        assertTrue(unit.inhibitor().isPresent());
+        assertTrue(unit.bang().isPresent());
         assertFalse(unit.quantifier().isPresent());
         assertPrintLn("""
                 unit
@@ -42,7 +42,7 @@ class UnitTest {
         Quantifier q = new ZeroOrOne("?".getBytes()[0]);
         Unit unit = new Unit(Optional.of(i), new Glyph("cs".getBytes()), Optional.of(q));
         assertEquals("unit", unit.primor());
-        assertTrue(unit.inhibitor().isPresent());
+        assertTrue(unit.bang().isPresent());
         assertTrue(unit.quantifier().isPresent());
         assertPrintLn("""
                 unit
