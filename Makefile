@@ -37,7 +37,7 @@ build:
 	@mkdir -p $(MAIN_BUILD)
 	@javac -d $(MAIN_BUILD) $(JAVA_SOURCES)
 
-build-test: tools/junit | $(TEST_BUILD)
+build-test: build tools/junit | $(TEST_BUILD)
 	@javac -d $(TEST_BUILD) -cp $(MAIN_BUILD):$(JUNIT_JAR) $(JAVA_TEST_SOURCES)
 
 test: build-test

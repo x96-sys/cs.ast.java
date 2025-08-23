@@ -9,7 +9,7 @@ class RangeHexTest {
 
     @Test
     void happy() {
-        RangeHex rangeHex = new RangeHex(new Hexadecimal(0x1), new Hexadecimal(0x2));
+        RangeHex rangeHex = new RangeHex(new Hexadecimal((byte) 0x1), new Hexadecimal((byte) 0x2));
         assertEquals("range-hex", rangeHex.primor());
         assertPrintLn("""
                 range-hex

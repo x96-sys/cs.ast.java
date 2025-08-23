@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.x96.sys.foundation.io.TestUtils.assertPrintLn;
 
-class InhibitorTest {
+class BangTest {
     @Test
     void happy() {
         String raw = "!";
-        Inhibitor i = new Inhibitor(raw.getBytes()[0]);
+        Bang i = new Bang(raw.getBytes()[0]);
         assertEquals(raw.getBytes()[0], i.raw());
-        assertEquals("inhibitor", i.primor());
-        assertPrintLn("inhibitor > !", () -> i.prettyPrint(""));
+        assertEquals("bang", i.primor());
+        assertPrintLn("bang > !", () -> i.prettyPrint(""));
     }
 }

@@ -9,7 +9,7 @@ class HexadecimalTest {
     @Test
     void happy() {
         int hexValue = 0x73;
-        Hexadecimal hex = new Hexadecimal(hexValue);
+        Hexadecimal hex = new Hexadecimal((byte) hexValue);
         assertEquals(hexValue, hex.raw());
         assertEquals("hex", hex.primor());
         assertPrintLn("hex > [0x73]", () -> hex.prettyPrint(""));
@@ -19,7 +19,7 @@ class HexadecimalTest {
     @Test
     void happyZero() {
         int hexValue = 0x63;
-        Hexadecimal hex = new Hexadecimal(hexValue);
+        Hexadecimal hex = new Hexadecimal((byte) hexValue);
         assertEquals("hex", hex.primor());
         assertEquals(hexValue, hex.raw());
         assertPrintLn("hex > [0x63]", () -> hex.prettyPrint(""));
