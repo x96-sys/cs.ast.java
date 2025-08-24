@@ -1,6 +1,6 @@
 package org.x96.sys.foundation.cs.ast.book.passage.pattern.modifier;
 
-public record Ghost(int raw) implements Modifier {
+public record Ghost(byte raw) implements Modifier {
 
     @Override
     public String primor() {

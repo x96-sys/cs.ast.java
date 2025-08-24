@@ -15,13 +15,13 @@ class HexadecimalTest {
         assertPrintLn("hex > [0x73]", () -> hex.prettyPrint(""));
 
     }
-    
+
     @Test
-    void happyZero() {
-        int hexValue = 0x63;
+    void happyFF() {
+        int hexValue = 0xFF;
         Hexadecimal hex = new Hexadecimal(hexValue);
         assertEquals("hex", hex.primor());
         assertEquals(hexValue, hex.raw());
-        assertPrintLn("hex > [0x63]", () -> hex.prettyPrint(""));
+        assertPrintLn("hex > [0xFF]", () -> hex.prettyPrint(""));
     }
 }
