@@ -1,5 +1,0 @@
-package org.x96.sys.foundation.cs.ast.book.passage.pattern.core;
-
-import org.x96.sys.foundation.cs.ast.CS;
-
-public sealed interface Core extends CS permits Hexadecimal, Word, Unit, Choices, Segment {}
